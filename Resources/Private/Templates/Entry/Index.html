@@ -1,0 +1,23 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of entries</f:section>
+
+<f:section name="Content">
+	<f:if condition="{entries}">
+		<f:then>
+			<ul>
+				<f:for each="{entries}" as="entry">
+					<li>
+						<f:link.action action="show" arguments="{entry: entry}">{entry.name}</f:link.action>
+						<f:link.action action="edit" arguments="{entry: entry}">Edit</f:link.action>
+						<f:link.action action="delete" arguments="{entry: entry}">Delete</f:link.action>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No entries created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new entry</f:link.action></p>
+</f:section>

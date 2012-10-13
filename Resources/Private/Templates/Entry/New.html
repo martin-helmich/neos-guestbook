@@ -1,0 +1,35 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New entry</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new entry:</p>
+
+	<f:form action="create" name="newEntry">
+		<ol>
+			<li>
+				<label for="date">Date</label>
+				<f:form.textfield type="datetime" value="{f:format.date(date: 'now', format: 'Y-m-d\TH:i:sP')}" property="date" id="date" />
+			</li>
+		
+			<li>
+				<label for="author">Author</label>
+				<f:form.textfield property="author" id="author" />
+			</li>
+		
+			<li>
+				<label for="email">Email</label>
+				<f:form.textfield property="email" id="email" />
+			</li>
+		
+			<li>
+				<label for="content">Content</label>
+				<f:form.textfield property="content" id="content" />
+			</li>
+		
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>
