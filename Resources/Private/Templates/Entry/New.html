@@ -1,35 +1,25 @@
-<f:layout name="Default" />
-
-<f:section name="Title">New entry</f:section>
-
-<f:section name="Content">
-	<p>Just fill out the following form to create a new entry:</p>
-
-	<f:form action="create" name="newEntry">
-		<ol>
-			<li>
-				<label for="date">Date</label>
-				<f:form.textfield type="datetime" value="{f:format.date(date: 'now', format: 'Y-m-d\TH:i:sP')}" property="date" id="date" />
-			</li>
-		
-			<li>
-				<label for="author">Author</label>
-				<f:form.textfield property="author" id="author" />
-			</li>
-		
-			<li>
-				<label for="email">Email</label>
-				<f:form.textfield property="email" id="email" />
-			</li>
-		
-			<li>
-				<label for="content">Content</label>
-				<f:form.textfield property="content" id="content" />
-			</li>
-		
-			<li>
-				<f:form.submit value="Create" />
-			</li>
-		</ol>
-	</f:form>
-</f:section>
+<f:form action="create" name="entry">
+    <table>
+        <tr>
+            <td><label for="author">Dein Name</label></td>
+            <td>
+                <f:form.textfield property="author" id="author" style="width: 100%"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Deine E-Mail-Adresse</label></td>
+            <td>
+                <f:form.textfield property="email" id="email" style="width: 100%"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <f:form.textarea property="content" id="content" style="width: 100%; height: 200px;"></f:form.textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><f:form.submit value="Erstellen" /></td>
+        </tr>
+    </table>
+</f:form>
