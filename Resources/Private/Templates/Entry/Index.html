@@ -3,7 +3,7 @@
         <f:for each="{entries}" as="entry">
             <div>
                 <div>
-                    Geschrieben am <f:format.date format="d.m.Y, H:i">{entry.date}</f:format.date> von
+                    Geschrieben am {entry.date -> format.date(format: "d.m.Y, H:i")} von
                     <f:link.email email="{entry.email}">{entry.author}</f:link.email>
                 </div>
                 <div>
